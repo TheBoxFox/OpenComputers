@@ -73,6 +73,27 @@ print(" ")
   end
 end
 
+local function rmFile()
+print("searching for GERTi install")
+   if fs.exists("/lib/GERTi.lua") then
+     print("Files located...")
+     os.execute("rm /lib/GERTi.lua)
+     os.execute("rm /boot/50_GERTi.lua")
+     print("Files removed, rebooting")
+     computer.shutdown(true)
+   elseif fs.exists("/home/GERTi.lua")
+      print("File located...")
+      os.execute("rm /home/GERTi.lua")
+      print("File removed.")
+   elseif fs.exists("/boot/50_GERTiMNC.lua") or fs.exists("50_GERTi.lua") then
+       print("Files located")
+       os.execute("rm /boot/50_*)
+       print("Files removed."
+   else
+       print("No GERTi files found.")
+   end
+end
+
 local function UIUpdate()
 
   while true do   
@@ -89,13 +110,16 @@ local function UIUpdate()
     elseif char == 51 and code == 4 then 
       Inst(3)
       break  
+    elseif char == 52 an code == 5 then
+      rmFile()
+      break
     end
   end
 end
 
 local function start()
   term.clear()
-  foxlib.ui.setTitle("GERT Installer 0.5a")
+  foxlib.ui.setTitle("GERT Installer 0.6")
   drawControl()
   UIUpdate()
 end
