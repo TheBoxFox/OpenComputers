@@ -110,7 +110,7 @@ local function UIUpdate()
     elseif char == 51 and code == 4 then 
       Inst(3)
       break  
-    elseif char == 52 an code == 5 then
+    elseif char == 52 and code == 5 then
       rmFile()
       break
     end
