@@ -87,8 +87,8 @@ print("searching for GERTi install")
       print("File removed.")
    elseif fs.exists("/boot/50_GERTiMNC.lua") or fs.exists("50_GERTi.lua") then
        print("Files located")
-       os.execute("rm /boot/50_*)
-       print("Files removed."
+       os.execute("rm /boot/50_*")
+       print("Files removed.")
    else
        print("No GERTi files found.")
    end
