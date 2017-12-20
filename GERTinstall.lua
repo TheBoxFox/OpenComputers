@@ -81,7 +81,7 @@ print("searching for GERTi install")
      os.execute("rm /boot/50_GERTi.lua")
      print("Files removed, rebooting")
      computer.shutdown(true)
-   elseif fs.exists("/home/GERTi.lua")
+   elseif fs.exists("/home/GERTi.lua") then 
       print("File located...")
       os.execute("rm /home/GERTi.lua")
       print("File removed.")
