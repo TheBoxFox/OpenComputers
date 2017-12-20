@@ -77,7 +77,7 @@ local function rmFile()
 print("searching for GERTi install")
    if fs.exists("/lib/GERTi.lua") then
      print("Files located...")
-     os.execute("rm /lib/GERTi.lua)
+     os.execute("rm /lib/GERTi.lua")
      os.execute("rm /boot/50_GERTi.lua")
      print("Files removed, rebooting")
      computer.shutdown(true)
