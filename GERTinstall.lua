@@ -37,6 +37,7 @@ term.setCursor(1,2)
   print("1) Client Installation (Surface) This option installs to a directory, you will have to require 'GERTi' to use it. ")
   print("2) Client Installation (Integrated) This option installs to the operating system. GERTi will become a system-wide library.")
   print("3) GERTi Router Installation. You should probably only do this if you know what you're doing.")
+  print("4) Uninstall GERTi. Why you do this?")
 end
 
 local function Inst(num)
@@ -80,15 +81,20 @@ print("searching for GERTi install")
      os.execute("rm /lib/GERTi.lua")
      os.execute("rm /boot/50_GERTi.lua")
      print("Files removed, rebooting")
+     os.sleep(1)
      computer.shutdown(true)
    elseif fs.exists("/home/GERTi.lua") then 
       print("File located...")
       os.execute("rm /home/GERTi.lua")
-      print("File removed.")
+      print("File removed. System reboot")
+      os.sleep(1)
+      computer.shutdown(true)
    elseif fs.exists("/boot/50_GERTiMNC.lua") or fs.exists("50_GERTi.lua") then
        print("Files located")
        os.execute("rm /boot/50_*")
-       print("Files removed.")
+       print("Files removed. System reboot")
+       os.sleep(1)
+       computer.shutdown(true)
    else
        print("No GERTi files found.")
    end
